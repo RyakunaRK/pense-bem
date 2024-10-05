@@ -1,0 +1,108 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #201f1f;
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0; 
+    height: 100vh; 
+    display: flex; 
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    background-color: #201f1f; /* Cor de fundo opcional */
+}
+
+.div {
+    display: block;
+    width: auto;
+    margin: auto;
+    border-color: #ff0101;
+}
+
+.gameboy-div {
+    position:relative; /* Permite que os elementos filhos usem essa div como referência para posicionamento */
+    display: flex; /* Ativa o Flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 80vh; /* Define a altura da div como 80% da altura da janela */
+    width: 100vw; /* Define a largura da div como 100% da largura da janela */
+    background-image: url('/SistemasDistribuídos-Aladdin@2x.png'); /* Caminho para a imagem de fundo */
+    background-size: contain; /* Faz a imagem cobrir toda a div */
+    background-position: center; /* Centraliza a imagem de fundo */
+    background-repeat: no-repeat; /* Não repete a imagem */
+}
+
+.abuttom-div {
+    position: relative; /* Permite que a nova div seja posicionada em relação à centered-div */
+    top: 227px; /* Ajuste a distância do topo da centered-div */
+    left: 109px; /* Ajuste a distância da esquerda da centered-div */
+    width: 10vw; /* Largura da nova div */
+    height: 10vh; /* Altura da nova div */
+    background-color: rgba(255, 255, 255, 0); /* Cor de fundo com transparência */
+    border: none; /* Borda para destaque */
+    display: flex; /* Usado para centralizar o conteúdo dentro da nova div */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: center; /* Alinha horizontalmente */
+    border-radius: 8px; /* Cantos arredondados */
+}
+
+.round-button {
+    position: absolute; /* Faz o botão ficar fixo em relação à janela */
+    width: 106px; /* Largura do botão */
+    height: 106px; /* Altura do botão */
+    background-color: #ff0101; /* Cor de fundo do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 50%; /* Faz o botão ficar redondo */
+    color: white; /* Cor do texto */
+    font-size: 18px; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor para uma mão quando passa sobre o botão */
+    display: flex; /* Usado para centralizar o texto dentro do botão */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: center; /* Alinha horizontalmente */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+    transition: background-color 0.3s; /* Transição suave para a mudança de cor */
+}
+
+.round-button:hover {
+    background-color: #00000000; /* Cor do botão ao passar o mouse */
+}
+
+.triangle-button {
+    border-left: 8px solid transparent; /* Largura do triângulo reduzida */
+    border-right: 8px solid transparent; /* Largura do triângulo reduzida */
+    border-bottom: 19px solid #ff0101; /* Altura e cor do triângulo reduzidas */
+    position: absolute; /* Permite posicionar os botões em locais específicos */
+    cursor: pointer; /* Muda o cursor para uma mão quando passa sobre o botão */
+}
+
+#t1 {
+    top: 64%; /* Topo do contêiner */
+    left: 34%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta para o centro exato */
+}
+
+#t2 {
+    bottom: 0; /* Parte inferior do contêiner */
+    left: 25%; /* Alinha à esquerda */
+}
+
+#t3 {
+    bottom: 0; /* Parte inferior do contêiner */
+    right: 25%; /* Alinha à direita */
+}
+
+#t4 {
+    top: 60%; /* Um pouco abaixo do meio */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta para o centro exato */
+}

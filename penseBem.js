@@ -8,7 +8,7 @@ var gabaritos = [[1,4,3,2,4,1,1,4,3,2,2,3,4,4,2,4,2,4,1,2,1,2,4,1,3,1,3,3,2,4],
 
 programa = document.querySelector("#lv")
 
-function iniciar() {
+function iniciar(programa) {
 	
 	if (programa == "021")
 		gabarito = gabarito021;
