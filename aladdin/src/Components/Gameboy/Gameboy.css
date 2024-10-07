@@ -2,107 +2,292 @@
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
-  
     color-scheme: light dark;
     color: rgba(255, 255, 255, 0.87);
-    background-color: #201f1f;
-  
+    background-color: #2D2A2A;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face {
+    font-family: 'Jacquard'; /* Nome da fonte */
+    src: url('Font/Jacquard12-Regular.ttf') format('truetype'); /* Caminho para o arquivo .ttf */
+    font-weight: normal; /* Peso da fonte */
+    font-style: normal; /* Estilo da fonte */
+}
+
 body {
-    margin: 0; 
-    height: 100vh; 
-    display: flex; 
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    background-color: #201f1f; /* Cor de fundo opcional */
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1f1f1f;
 }
 
 .div {
-    display: block;
-    width: auto;
-    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-color: #ff0101;
 }
 
 .gameboy-div {
-    position:relative; /* Permite que os elementos filhos usem essa div como referência para posicionamento */
-    display: flex; /* Ativa o Flexbox */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    height: 80vh; /* Define a altura da div como 80% da altura da janela */
-    width: 100vw; /* Define a largura da div como 100% da largura da janela */
-    background-image: url('/SistemasDistribuídos-Aladdin@2x.png'); /* Caminho para a imagem de fundo */
-    background-size: contain; /* Faz a imagem cobrir toda a div */
-    background-position: center; /* Centraliza a imagem de fundo */
-    background-repeat: no-repeat; /* Não repete a imagem */
+    position: relative;
+    width: 40vw; /* Largura baseada na largura da viewport (tela) */
+    height: calc(40vw * 1456 / 916); /* Altura proporcional à largura com base nas dimensões originais */
+    max-width: 500px; /* Largura máxima para não ultrapassar o tamanho original */
+    max-height: 800px; /* Altura máxima para manter as proporções originais */
+    background-image: url('/SistemasDistribuídos-Aladdin@2x.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: solid 1px #ff0101
 }
 
 .abuttom-div {
-    position: relative; /* Permite que a nova div seja posicionada em relação à centered-div */
-    top: 227px; /* Ajuste a distância do topo da centered-div */
-    left: 109px; /* Ajuste a distância da esquerda da centered-div */
-    width: 10vw; /* Largura da nova div */
-    height: 10vh; /* Altura da nova div */
-    background-color: rgba(255, 255, 255, 0); /* Cor de fundo com transparência */
-    border: none; /* Borda para destaque */
-    display: flex; /* Usado para centralizar o conteúdo dentro da nova div */
-    align-items: center; /* Alinha verticalmente */
-    justify-content: center; /* Alinha horizontalmente */
-    border-radius: 8px; /* Cantos arredondados */
+    position: absolute;
+    top: 82.3%; /* Posição percentual relativa à altura do gameboy-div */
+    left: 45.8%; /* Posição percentual relativa à largura do gameboy-div */
+    transform: translate(69%, -50%); /* Altura percentual em relação ao gameboy-div */
+    width: auto; /* Largura percentual em relação ao gameboy-div */
+    height: auto;
+    max-width: 120px;
+    max-height: 120px;
+    background-color: rgba(255, 255, 255, 0);
+    border: solid 1px #ff0101;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
 }
 
+
+
 .round-button {
-    position: absolute; /* Faz o botão ficar fixo em relação à janela */
-    width: 106px; /* Largura do botão */
-    height: 106px; /* Altura do botão */
-    background-color: #ff0101; /* Cor de fundo do botão */
-    border: none; /* Remove a borda padrão */
-    border-radius: 50%; /* Faz o botão ficar redondo */
-    color: white; /* Cor do texto */
-    font-size: 18px; /* Tamanho da fonte */
-    cursor: pointer; /* Muda o cursor para uma mão quando passa sobre o botão */
-    display: flex; /* Usado para centralizar o texto dentro do botão */
-    align-items: center; /* Alinha verticalmente */
-    justify-content: center; /* Alinha horizontalmente */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
-    transition: background-color 0.3s; /* Transição suave para a mudança de cor */
+    width: 9.4vw;
+    height: 10vw;
+    max-width: 120px;
+    max-height: 120px;
+    background-color: #ff0101;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 2vw;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
 }
 
 .round-button:hover {
-    background-color: #00000000; /* Cor do botão ao passar o mouse */
+    background-color: #00000000;
+}
+
+.tbuttom-div{
+    position: absolute; /* Permite o posicionamento absoluto em relação a gabeboy-div */
+    width: 15vw; /* Se você quiser que ela ocupe toda a largura */
+    height:15vw; /* Se você quiser que ela ocupe toda a altura */
+    max-width: 190px;
+    max-height: 190px;
+    top: 61%; /* Alinha ao topo */
+    left: 12%; /* Alinha à esquerda */
+    border: solid 1px #ff0101;
 }
 
 .triangle-button {
-    border-left: 8px solid transparent; /* Largura do triângulo reduzida */
-    border-right: 8px solid transparent; /* Largura do triângulo reduzida */
-    border-bottom: 19px solid #ff0101; /* Altura e cor do triângulo reduzidas */
-    position: absolute; /* Permite posicionar os botões em locais específicos */
-    cursor: pointer; /* Muda o cursor para uma mão quando passa sobre o botão */
+    position: absolute; /* Permite que os botões fiquem fixos na tela */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    width: 4vw; /* Tamanho fixo para os botões */
+    height: 4vw; /* Tamanho fixo para os botões */
+    max-width: 40px;
+    max-height: 40px;
+    background-color: #ff0101; /* Cor de fundo do triângulo */
+    border: none; /* Remove bordas */
+    border-radius: 50%; /* Faz os botões serem circulares */
+    color: white; /* Cor do texto */
+    font-size: 2vw; /* Tamanho da fonte relativo */
+    display: flex; /* Permite centralizar conteúdo */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra do botão */
+    transition: background-color 0.3s; /* Transição suave de cor de fundo */
 }
 
+/* Tamanho e posicionamento do triângulo 1 */
 #t1 {
-    top: 64%; /* Topo do contêiner */
-    left: 34%; /* Centraliza horizontalmente */
-    transform: translateX(-50%); /* Ajusta para o centro exato */
+    top: 5%; /* Posição vertical em relação à altura da viewport */
+    left: 39%; /* Posição horizontal em relação à largura da viewport */
 }
 
+/* Tamanho e posicionamento do triângulo 2 */
 #t2 {
-    bottom: 0; /* Parte inferior do contêiner */
-    left: 25%; /* Alinha à esquerda */
+    top: 40%; /* Posição vertical em relação à altura da viewport */
+    left: 6%; /* Posição horizontal em relação à largura da viewport */
 }
 
+/* Tamanho e posicionamento do triângulo 3 */
 #t3 {
-    bottom: 0; /* Parte inferior do contêiner */
-    right: 25%; /* Alinha à direita */
+    top: 74%; /* Posição vertical em relação à altura da viewport */
+    left: 39%; /* Posição horizontal em relação à largura da viewport */
 }
 
+/* Tamanho e posicionamento do triângulo 4 */
 #t4 {
-    top: 60%; /* Um pouco abaixo do meio */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translateX(-50%); /* Ajusta para o centro exato */
+    top: 40%; /* Posição vertical em relação à altura da viewport */
+    left: 72%; /* Posição horizontal em relação à largura da viewport */
+}
+
+.rbuttom-div{
+    position: absolute;
+    border: solid 1px #ff0101;
+    width: 18vw;
+    height: 2vw;
+    max-width: 227px;
+    max-height: 25px;
+    top: 52.8%;
+    left: 42.5%;
+}
+
+.retangle{
+    width: 10vw;
+    height: 2vw;
+    max-width: 110px;
+    max-height: 25px;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    background-color: #ff0101;
+    border: none;
+}
+
+#return{
+    position: absolute;
+
+}
+
+#exit{
+    position: absolute;
+    left: 51.5%;
+
+}
+
+.tela{
+    border: solid 1px #ff0101;
+    width: 31vw;
+    height: 24.4vw;
+    max-width: 389px;
+    max-height: 308px;
+    position: absolute;
+    top: 9.2%;
+    left: 11%;
+    display: flex;
+
+
+}
+
+.resposta{
+    width: 6.5vw;
+    height: 6.5vw;
+    max-width: 85px;
+    max-height: 85px;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+#vm{
+    position: absolute;
+    background-color: #b83e3e;
+    top: 65%;
+    left: 2%;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+#vm:hover{
+    box-shadow: 0 0 15px 10px rgba(184, 62, 62, 0.7);
+}
+
+#am{
+    position: absolute;
+    background-color: #b6b83e;
+    top: 65%;
+    left: 27%;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+#am:hover{
+    box-shadow: 0 0 15px 10px rgba(182, 184, 62, 0.7);
+}
+
+#az{
+    position: absolute;
+    background-color: #3e46b8;
+    top: 65%;
+    left: 51.7%;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+#az:hover{
+    box-shadow: 0 0 15px 10px rgba(62, 70, 184, 0.7);
+}
+
+#vd{
+    position: absolute;
+    background-color: #4cb83e;
+    top: 65%;
+    left: 76%;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+#vd:hover{
+    box-shadow: 0 0 15px 10px rgba(76, 184, 62, 0.7);
+}
+
+.resposta:hover {
+    width: 8vw;
+    height: 8vw;
+    max-width: 90px;
+    max-height: 90px;
+}
+
+#numPergunta{
+    position: absolute;
+    width: 25vw;
+    height: 5vw;
+    max-width: 300px;
+    max-height: 50px;
+    top: 20%;
+    left: 10.6%;
+    border: solid 1px #ff0101;
+    background-color: #2D2A2A;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: clamp(20px, 4.5vw, 54px);
+    font-family: 'Jacquard';
+    z-index: 1;
+}
+
+h1{
+    position: absolute;
+    width: 25vw;
+    height: 5vw;
+    max-width: 304px;
+    max-height: 50px;
+    top: -8%;
+    left: 10.6%;
+    border: solid 1px #ff0101;
+    background-color: #2D2A2A;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: clamp(20px, 4.5vw, 54px);
+    font-family: 'Jacquard';
+    z-index: 2;
+
+
 }
