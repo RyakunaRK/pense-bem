@@ -199,11 +199,20 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
+.opcoes{
+    position: absolute;
+    border: solid 1px #ff0101;
+    width: 30.7vw;
+    height: 6vw;
+    max-width: 389px;
+    max-height: 85px;
+    top: 65%;
+}
+
 #vm{
     position: absolute;
     background-color: #b83e3e;
-    top: 65%;
-    left: 2%;
+    left: 3%;
     transition: box-shadow 0.3s ease-in-out;
 }
 
@@ -214,7 +223,6 @@ body {
 #am{
     position: absolute;
     background-color: #b6b83e;
-    top: 65%;
     left: 27%;
     transition: box-shadow 0.3s ease-in-out;
 }
@@ -226,8 +234,7 @@ body {
 #az{
     position: absolute;
     background-color: #3e46b8;
-    top: 65%;
-    left: 51.7%;
+    left: 51%;
     transition: box-shadow 0.3s ease-in-out;
 }
 
@@ -238,7 +245,6 @@ body {
 #vd{
     position: absolute;
     background-color: #4cb83e;
-    top: 65%;
     left: 76%;
     transition: box-shadow 0.3s ease-in-out;
 }
@@ -258,7 +264,7 @@ body {
     position: absolute;
     width: 25vw;
     height: 5vw;
-    max-width: 300px;
+    max-width: 304px;
     max-height: 50px;
     top: 20%;
     left: 10.6%;
@@ -278,7 +284,7 @@ h1{
     height: 5vw;
     max-width: 304px;
     max-height: 50px;
-    top: -8%;
+    top: -7%;
     left: 10.6%;
     border: solid 1px #ff0101;
     background-color: #2D2A2A;
@@ -288,6 +294,4 @@ h1{
     font-size: clamp(20px, 4.5vw, 54px);
     font-family: 'Jacquard';
     z-index: 2;
-
-
 }

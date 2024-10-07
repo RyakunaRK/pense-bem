@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { QuestsScreen } from '../Screen/QuestsScreen';
+import {BooksScreen} from '../Screen/BooksScreen';
 import './Gameboy.css'
 
 const Gameboy = () => {
+    const [questNumber,setQuestNumber] = useState(1)
+    const [oi,setOi] = useState(false)
+    const handleClick = () => {
+        setOi(!oi)
+    }
     return (
     <div className="div">
         <div className='gameboy-div'>
             <div className="abuttom-div">
-                <button className="round-button">A</button>
+                <button className="round-button" onClick={handleClick}>A</button>
             </div>
             <div className="tbuttom-div">
                 <button className="triangle-button" id="t1">1</button>
@@ -18,14 +25,7 @@ const Gameboy = () => {
                 <button className='retangle' id="return">return</button>
                 <button className='retangle' id="exit">exit</button>
             </div>
-            <div className='tela'>
-                <h1>Pergunta</h1>
-                <button className="resposta" id="vm">vm</button>
-                <button className="resposta" id="am">am</button>
-                <button className="resposta" id="az">az</button>
-                <button className="resposta" id="vd">vd</button>
-                <spam id="numPergunta">25</spam>
-            </div>
+            {oi && <QuestsScreen numPergunta={questNumber}/>}
         </div>
     </div>
     );
