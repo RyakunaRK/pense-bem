@@ -25,6 +25,7 @@ export const BooksScreen = ({ setSelectedBook, selectedBook }) => {
             <div id="tecladoNum">
                 {Array.from({ length: 10 }, (_, index) => (
                     <button
+                    id={`b${index}`}
                     key={index}
                     className="digiNum"
                     onClick={() => handleNumberClick(index)}
