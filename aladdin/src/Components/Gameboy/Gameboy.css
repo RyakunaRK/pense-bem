@@ -22,6 +22,13 @@
     font-style: normal; /* Estilo da fonte */
 }
 
+@font-face {
+    font-family: 'Minecraft'; /* Nome da fonte */
+    src: url('Font/Minecraft.ttf') format('truetype'); /* Caminho para o arquivo .ttf */
+    font-weight: normal; /* Peso da fonte */
+    font-style: normal; /* Estilo da fonte */
+}
+
 body {
     margin: 0;
     height: 100vh;
@@ -298,6 +305,26 @@ h1{
     font-size: clamp(20px, 4.5vw, 54px);
     font-family: 'Jacquard';
     z-index: 2;
+}
+
+#pressStart{
+    position: absolute;
+    border: transparent;
+    width: 30.8vw;
+    max-width: 388px;
+    top: 35%;
+    font-family: 'Minecraft';
+    text-align: center;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1; /* Visível */
+    }
+    50% {
+        opacity: 0; /* Invisível no meio do ciclo */
+    }
 }
 
 #sLivro{
