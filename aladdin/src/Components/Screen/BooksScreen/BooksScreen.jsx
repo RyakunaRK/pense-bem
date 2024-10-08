@@ -1,10 +1,6 @@
 import React from 'react';
 
-export const BooksScreen = ({ setSelectedBook, selectedBook }) => {
-
-    const handleNumberClick = (num) => {
-        setSelectedBook(prev => prev + num);
-    };
+export const BooksScreen = ({ selectedBook, selectedNumberIndex }) => {
     return (
         <>
             <h1 id="sLivro">Selecione seu livro</h1>
@@ -22,10 +18,10 @@ export const BooksScreen = ({ setSelectedBook, selectedBook }) => {
                     <button
                         id={`b${index}`}
                         key={index}
-                        className="digiNum"
-                        onClick={() => handleNumberClick(index)} 
+                        className={`digiNum ${index === selectedNumberIndex ? 'selected' : ''}`}
+                        style={{ userSelect: 'none' }}
                     >
-                        {index}
+                        {index === selectedNumberIndex ? `${index}` : index}
                     </button>
                 ))}
             </div>
