@@ -13,39 +13,50 @@ const Gameboy = () => {
     const [audioStartReturn] = useState(new Audio('/Sound/pressFirstStart.mp3'));
     const [audioGame] = useState(new Audio('/Sound/posSelectBook.mp3'));
     const [audioQuests] = useState(new Audio('/Sound/questsScreen.mp3'));
+    
     audio.volume = 1;
     audioAButtom.volume = 0.1;
+    
     const [results, setResults] = useState([]);
     const [currentQuestion, setCurrentQuestion] = useState(0);
+    
+    const [currentAttempt, setCurrentAttempt] = useState(1);
+    const [scorePerQuestion, setScorePerQuestion] = useState([]);
 
-    audioQuests.addEventListener('ended', () => {
-        audioQuests.currentTime = 0;
-        audioQuests.play();
-    })
+    useEffect(() => {
+        const handleEnded = () => {
+            audioQuests.currentTime = 0;
+            audioQuests.play();
+        };
+        audioQuests.addEventListener('ended', handleEnded);
+        return () => {
+            audioQuests.removeEventListener('ended', handleEnded);
+        };
+    }, [audioQuests]);
 
-    const playSound = () =>{
+    const playSound = () => {
         audio.currentTime = 0;
         audio.play();
-    }
+    };
 
-    const playSound2 = () =>{
+    const playSound2 = () => {
         audioAButtom.currentTime = 0;
         audioAButtom.play();
-    }
+    };
 
-    const playSound3 = () =>{
+    const playSound3 = () => {
         audioStartReturn.currentTime = 0;
         audioStartReturn.play();
-    }
+    };
 
-    const playSound4 = () =>{
+    const playSound4 = () => {
         audioGame.currentTime = 0;
         audioGame.play();
-        setTimeout( () => {
+        setTimeout(() => {
             audioQuests.currentTime = 0;
             audioQuests.play();
         }, 2000);
-    }
+    };
 
     useEffect(() => {
         if (screen === 'quests') {
@@ -57,14 +68,32 @@ const Gameboy = () => {
                 setGabarito([]);
             }
         }
-    }, [screen]);
-    
+    }, [screen, selectedBook]);
 
     const handleAnswerSelection = (answer) => {
-        if (results.length === 30) return;
+        if (currentQuestion >= 30) return;
+        answer += 1
+        
         const isCorrect = answer === gabarito[currentQuestion];
-        setResults((prevResults) => [...prevResults, isCorrect]);
-        setCurrentQuestion((prevQuestion) => prevQuestion + 1);
+        
+        if (isCorrect) {
+            const points = 4 - currentAttempt;
+            setScorePerQuestion((prevScores) => [...prevScores, points]);
+            
+            setResults((prevResults) => [...prevResults, currentAttempt === 1]);
+            
+            setCurrentQuestion((prevQuestion) => prevQuestion + 1);
+            setCurrentAttempt(1);
+        } else {
+            if (currentAttempt < 3) {
+                setCurrentAttempt((prevAttempt) => prevAttempt + 1);
+            } else {
+                setScorePerQuestion((prevScores) => [...prevScores, 0]);
+                setResults((prevResults) => [...prevResults, false]);
+                setCurrentQuestion((prevQuestion) => prevQuestion + 1);
+                setCurrentAttempt(1);
+            }
+        }
     };
 
     const handleLeft = () => {
@@ -90,11 +119,12 @@ const Gameboy = () => {
     const handleReturn = () => {
         if (screen === 'quests') {
             setScreen('books');
-            setSelectedBook('')
-            setSelectedNumberIndex(0)
-            setScreen('books');
-            setResults([])
-            setCurrentQuestion(0)
+            setSelectedBook('');
+            setSelectedNumberIndex(0);
+            setResults([]);
+            setScorePerQuestion([]);
+            setCurrentQuestion(0);
+            setCurrentAttempt(1);
             return;
         }
 
@@ -109,8 +139,11 @@ const Gameboy = () => {
         }
 
         setScreen('quests');
-        playSound4();
+            playSound4();
     };
+
+    const totalScore = scorePerQuestion.reduce((a, b) => a + b, 0);
+    const firstTryCorrect = scorePerQuestion.filter(score => score === 3).length;
 
     return (
         <div className="div">
@@ -119,9 +152,9 @@ const Gameboy = () => {
                     <button className="round-button" onClick={handleSelectNumber}></button>
                 </div>
                 <div className="tbuttom-div">
-                <button className="triangle-button" onClick={handleLeft} id="t1"></button>
+                    <button className="triangle-button" onClick={handleLeft} id="t1"></button>
                     <button className="triangle-button" onClick={handleLeft} id="t2"></button>
-                    <button className="triangle-button" onClick={handleLeft} id="t3"></button>
+                    <button className="triangle-button" onClick={handleRight} id="t3"></button>
                     <button className="triangle-button" onClick={handleRight} id="t4"></button>
                 </div>
                 <div className="rbuttom-div">
@@ -136,6 +169,9 @@ const Gameboy = () => {
                     setSelectedNumberIndex={setSelectedNumberIndex}
                     results={results}
                     currentQuestion={currentQuestion}
+                    scorePerQuestion={scorePerQuestion}
+                    totalScore={totalScore}
+                    firstTryCorrect={firstTryCorrect}
                 />
             </div>
         </div>

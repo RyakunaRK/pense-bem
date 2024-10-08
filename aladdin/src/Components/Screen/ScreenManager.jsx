@@ -9,7 +9,10 @@ export const ScreenManager = ({
     selectedNumberIndex,
     setSelectedNumberIndex,
     results,
-    currentQuestion
+    currentQuestion,
+    scorePerQuestion,
+    totalScore,
+    firstTryCorrect,
 }) => {
     let nodeToUse = <StartScreen />;
 
@@ -21,6 +24,9 @@ export const ScreenManager = ({
                     setSelectedNumberIndex={setSelectedNumberIndex}
                     results={results}
                     currentQuestion={currentQuestion}
+                    scorePerQuestion={scorePerQuestion}
+                    totalScore={totalScore}
+                    firstTryCorrect={firstTryCorrect}
                 />
             );
             break;
