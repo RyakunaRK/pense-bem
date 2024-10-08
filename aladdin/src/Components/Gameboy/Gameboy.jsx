@@ -1,34 +1,55 @@
 import React, { useState } from 'react';
 import { QuestsScreen } from '../Screen/QuestsScreen/QuestsScreen';
-import {BooksScreen} from '../Screen/BooksScreen/BooksScreen';
-import './Gameboy.css'
+import { BooksScreen } from '../Screen/BooksScreen/BooksScreen';
+import './Gameboy.css';
 
 const Gameboy = () => {
-    const [questNumber,setQuestNumber] = useState(1)
-    const [oi,setOi] = useState(false)
-    const handleClick = () => {
-        setOi(!oi)
-    }
+    const [screen, setScreen] = useState('books');
+    const [questNumber, setQuestNumber] = useState(1);
+    const [selectedBook, setSelectedBook] = useState('');
+
+    const handleButtonClick = (action) => {
+        switch (action) {
+            case 'toggleScreen':
+                setScreen(screen === 'books' ? 'quests' : 'books');
+                break;
+            case 'nextQuestion':
+                setQuestNumber((prev) => prev + 1);
+                break;
+            case 'reset':
+                setScreen('books');
+                setQuestNumber(1);
+                break;
+            default:
+                break;
+        }
+    };
+
     return (
-    <div className="div">
-        <div className='gameboy-div'>
+        <div className="gameboy-div">
             <div className="abuttom-div">
-                <button className="round-button" onClick={handleClick}>A</button>
+                <button className="round-button" onClick={() => handleButtonClick('toggleScreen')}>A</button>
             </div>
             <div className="tbuttom-div">
-                <button className="triangle-button" id="t1">1</button>
-                <button className="triangle-button" id="t2">2</button>
-                <button className="triangle-button" id="t3">3</button>
-                <button className="triangle-button" id="t4">4</button>
+                {Array.from({ length: 4 }, (_, index) => (
+                    <button
+                        key={index}
+                        className="triangle-button"
+                        onClick={() => handleButtonClick('nextQuestion')}
+                    >
+                        {index + 1}
+                    </button>
+                ))}
             </div>
-            <div className='rbuttom-div'>
-                <button className='retangle' id="return">return</button>
-                <button className='retangle' id="exit">exit</button>
+            <div className="rbuttom-div">
+                <button className="retangle" onClick={() => handleButtonClick('reset')}>return</button>
+                <button className="retangle" onClick={() => setScreen('exit')}>exit</button>
             </div>
-            {oi && <BooksScreen numPergunta={questNumber}/>}
+
+            {screen === 'books' && <BooksScreen setSelectedBook={setSelectedBook} />}
+            {screen === 'quests' && <QuestsScreen numPergunta={questNumber} />}
         </div>
-    </div>
     );
-}
+};
 
 export default Gameboy;
