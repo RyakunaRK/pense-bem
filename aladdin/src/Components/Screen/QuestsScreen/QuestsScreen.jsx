@@ -32,7 +32,6 @@ export const QuestsScreen = ({
                             id={option}
                             onClick={() => setSelectedNumberIndex(index)}
                         >
-                            {option}
                         </button>
                     ))}
                 </div>

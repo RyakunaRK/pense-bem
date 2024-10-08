@@ -246,7 +246,7 @@ body {
 #az{
     position: absolute;
     background-color: #3e46b8;
-    left: 51%;
+    left: 51.5%;
     transition: box-shadow 0.3s ease-in-out;
 }
 
