@@ -330,9 +330,24 @@ h1{
 #tecladoNum{
     position: absolute;
     border: solid 1px #ff0101;
-    width: 31vw;
-    height: 2.8vw;
+    width: 30.86vw;
+    height: 5vw;
     text-align: center;
     top: 75%;
     z-index: 2;
+}
+
+.digiNum{
+    position: relative;
+    width: 2.7vw;
+    height: 5vw;
+    padding: auto;
+    top: 0%;
+    left: -0.5%;
+    font-family: 'Jacquard';
+    background-color: transparent;
+    border: none;
+    color: #CD9903;
+    font-size: clamp(20px, 4.7vw, 54px);
+    justify-items: center;
 }
