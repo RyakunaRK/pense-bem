@@ -332,6 +332,7 @@ h1{
     border: solid 1px #ff0101;
     width: 30.86vw;
     height: 5vw;
+    max-width: 389px;
     text-align: center;
     top: 75%;
     z-index: 2;
@@ -342,6 +343,8 @@ h1{
     width: 2.7vw;
     height: 5vw;
     padding: auto;
+    max-width: 38px;
+    max-height: 30px;
     top: 0%;
     left: -0.5%;
     font-family: 'Jacquard';
@@ -350,4 +353,5 @@ h1{
     color: #CD9903;
     font-size: clamp(20px, 4.7vw, 54px);
     justify-items: center;
+    transition: all 0.3s ease-in-out;
 }
