@@ -4,7 +4,7 @@ export const QuestsScreen = ({ numPergunta }) => {
     const options = ['vm', 'am', 'az', 'vd'];
 
     return (
-        <div className="tela">
+        <>
             <h1>Pergunta {numPergunta}</h1>
             <div className="opcoes">
                 {options.map((option) => (
@@ -13,6 +13,6 @@ export const QuestsScreen = ({ numPergunta }) => {
                     </button>
                 ))}
             </div>
-        </div>
+        </>
     );
 };
