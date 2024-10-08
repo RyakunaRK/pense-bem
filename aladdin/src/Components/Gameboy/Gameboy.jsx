@@ -11,7 +11,7 @@ const Gameboy = () => {
     };
 
     const handleReturn = () => {
-        setScreen('start');
+        setSelectedBook(prev => prev.slice(0, -1));
     };
 
     const handleStart = () => {
