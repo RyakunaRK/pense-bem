@@ -286,12 +286,53 @@ h1{
     max-height: 50px;
     top: -7%;
     left: 10.6%;
-    border: solid 1px #ff0101;
     background-color: #2D2A2A;
     justify-content: center;
     align-items: center;
     text-align: center;
     font-size: clamp(20px, 4.5vw, 54px);
     font-family: 'Jacquard';
+    z-index: 2;
+}
+
+#sLivro{
+    font-size: clamp(20px, 3.5vw, 54px);
+    width: 31vw;
+    height: 5vw;
+    max-width: 388px;
+    max-height: 50px;
+    top: 4%;
+    left: 0%;
+}
+
+#numLivro{
+    position: absolute;
+    border: solid 1px #ff0101;
+}
+
+#livro{
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    text-align: center;
+    font-family: 'Jacquard';
+    outline: none;
+    font-size: clamp(20px, 3.5vw, 54px);
+    width: 20vw;
+    height: 2.5vw;
+    max-width: 255px;
+    max-height: 50px;
+    top: 38%;
+    left: 15%;
+    transition: color 0.3s all;
+}
+
+#tecladoNum{
+    position: absolute;
+    border: solid 1px #ff0101;
+    width: 31vw;
+    height: 2.8vw;
+    text-align: center;
+    top: 75%;
     z-index: 2;
 }

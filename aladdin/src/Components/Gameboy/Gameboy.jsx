@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { QuestsScreen } from '../Screen/QuestsScreen';
-import {BooksScreen} from '../Screen/BooksScreen';
+import { QuestsScreen } from '../Screen/QuestsScreen/QuestsScreen';
+import {BooksScreen} from '../Screen/BooksScreen/BooksScreen';
 import './Gameboy.css'
 
 const Gameboy = () => {
@@ -25,7 +25,7 @@ const Gameboy = () => {
                 <button className='retangle' id="return">return</button>
                 <button className='retangle' id="exit">exit</button>
             </div>
-            {oi && <QuestsScreen numPergunta={questNumber}/>}
+            {oi && <BooksScreen numPergunta={questNumber}/>}
         </div>
     </div>
     );
