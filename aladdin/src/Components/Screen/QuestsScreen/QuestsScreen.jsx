@@ -2,10 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { gabaritos } from '../../../../penseBem.js';
 
 export const QuestsScreen = ({
-    selectedBook,
     selectedNumberIndex,
     setSelectedNumberIndex,
-    setGabarito,
     results,
     currentQuestion
 }) => {
@@ -32,7 +30,7 @@ export const QuestsScreen = ({
                             key={option}
                             className={`resposta ${selectedNumberIndex === index ? 'selected' : ''}`}
                             id={option}
-                            onClick={() => setSelectedNumberIndex(index)} // Adicionado
+                            onClick={() => setSelectedNumberIndex(index)}
                         >
                             {option}
                         </button>

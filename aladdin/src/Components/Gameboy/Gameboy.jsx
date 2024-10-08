@@ -19,7 +19,7 @@ const Gameboy = () => {
 
     useEffect(() => {
         if (screen === 'quests') {
-            setSelectedNumberIndex(0);
+            setSelectedNumberIndex(1);
             const gabaritoIndex = selectedBook - 41;
             if (gabaritos[gabaritoIndex]) {
                 setGabarito(gabaritos[gabaritoIndex]);
@@ -101,7 +101,6 @@ const Gameboy = () => {
                     selectedBook={selectedBook}
                     selectedNumberIndex={selectedNumberIndex}
                     setSelectedNumberIndex={setSelectedNumberIndex}
-                    setGabarito={setGabarito}
                     results={results}
                     currentQuestion={currentQuestion}
                 />

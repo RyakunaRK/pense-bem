@@ -8,7 +8,6 @@ export const ScreenManager = ({
     selectedBook,
     selectedNumberIndex,
     setSelectedNumberIndex,
-    setGabarito,
     results,
     currentQuestion
 }) => {
@@ -18,10 +17,8 @@ export const ScreenManager = ({
         case 'quests':
             nodeToUse = (
                 <QuestsScreen 
-                    selectedBook={selectedBook}
                     selectedNumberIndex={selectedNumberIndex}
                     setSelectedNumberIndex={setSelectedNumberIndex}
-                    setGabarito={setGabarito}
                     results={results}
                     currentQuestion={currentQuestion}
                 />
