@@ -11,6 +11,10 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+    user-select: none;
+}
+
 @font-face {
     font-family: 'Jacquard'; /* Nome da fonte */
     src: url('Font/Jacquard12-Regular.ttf') format('truetype'); /* Caminho para o arquivo .ttf */

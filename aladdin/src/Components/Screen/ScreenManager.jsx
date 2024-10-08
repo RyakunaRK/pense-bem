@@ -3,7 +3,7 @@ import { QuestsScreen } from "./QuestsScreen/QuestsScreen";
 import { StartScreen } from "./StartScreen/StartScreen";
 import { BooksScreen } from "./BooksScreen/BooksScreen";
 
-export const ScreenManager = ({ screenToRender }) => {
+export const ScreenManager = ({ screenToRender, selectedBook, setSelectedBook }) => {
     let nodeToUse = <StartScreen />;
 
     switch (screenToRender) {
@@ -11,7 +11,12 @@ export const ScreenManager = ({ screenToRender }) => {
             nodeToUse = <QuestsScreen />;
             break;
         case 'books':
-            nodeToUse = <BooksScreen />;
+            nodeToUse = (
+                <BooksScreen 
+                    setSelectedBook={setSelectedBook} 
+                    selectedBook={selectedBook} 
+                />
+            );
             break;
         default:
             nodeToUse = <StartScreen />;

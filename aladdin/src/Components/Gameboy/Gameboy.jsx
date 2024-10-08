@@ -1,25 +1,24 @@
 import React, { useState } from 'react';
-import { ScreenManager } from '../Screen/ScreenManager'
-import './Gameboy.css'
+import { ScreenManager } from '../Screen/ScreenManager';
+import './Gameboy.css';
 
 const Gameboy = () => {
     const [screen, setScreen] = useState('');
-    const [questNumber, setQuestNumber] = useState(1);
     const [selectedBook, setSelectedBook] = useState('');
 
     const handleButtonClick = () => {
-        
-    }
+    
+    };
 
     const handleReturn = () => {
-
-    }
+        setScreen('start');
+    };
 
     const handleStart = () => {
-        setScreen('books')
-    }
-        
-    return (     
+        setScreen('books');
+    };
+
+    return (
         <div className="div">
             <div className='gameboy-div'>
                 <div className="abuttom-div">
@@ -38,10 +37,12 @@ const Gameboy = () => {
                 
                 <ScreenManager
                     screenToRender={screen}
+                    selectedBook={selectedBook}
+                    setSelectedBook={setSelectedBook}
                 />
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Gameboy;
