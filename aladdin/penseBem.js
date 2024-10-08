@@ -1,6 +1,6 @@
 var num, programa, tentativa, pontos;
 
-var gabaritos = [
+export const gabaritos = [
 [1,4,3,2,4,1,1,4,3,2,2,3,4,4,2,4,2,4,1,2,1,2,4,1,3,1,3,3,2,4], //livro 041
 [1,2,1,2,4,1,3,1,3,3,2,4,4,4,2,4,3,4,4,4,1,3,4,1,2,3,1,1,2,1], //livro 042
 [4,2,2,2,3,4,4,4,4,4,1,3,1,1,2,4,2,1,4,2,2,4,4,3,3,2,1,4,2,1], //livro 043
@@ -68,10 +68,3 @@ function jogar(resposta) {
 		document.getElementById('visor2').value = "Pontuação: " + pontos;
 	}
 }
-
-programa.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        Number(programa.value) == 41
-        iniciar();
-    }
-});

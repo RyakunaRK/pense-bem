@@ -8,7 +8,11 @@ export const ScreenManager = ({ screenToRender, selectedBook, selectedNumberInde
 
     switch (screenToRender) {
         case 'quests':
-            nodeToUse = <QuestsScreen />;
+            nodeToUse = (
+                <QuestsScreen 
+                    numLivro={selectedBook}
+                />
+            );
             break;
         case 'books':
             nodeToUse = (

@@ -16,8 +16,8 @@
 }
 
 @font-face {
-    font-family: 'Jacquard'; /* Nome da fonte */
-    src: url('Font/Jacquard12-Regular.ttf') format('truetype'); /* Caminho para o arquivo .ttf */
+    font-family: 'Minecraft'; /* Nome da fonte */
+    src: url('Font/Minecraft12-Regular.ttf') format('truetype'); /* Caminho para o arquivo .ttf */
     font-weight: normal; /* Peso da fonte */
     font-style: normal; /* Estilo da fonte */
 }
@@ -286,7 +286,7 @@ body {
     align-items: center;
     text-align: center;
     font-size: clamp(20px, 4.5vw, 54px);
-    font-family: 'Jacquard';
+    font-family: 'Minecraft';
     z-index: 1;
 }
 
@@ -303,7 +303,7 @@ h1{
     align-items: center;
     text-align: center;
     font-size: clamp(20px, 4.5vw, 54px);
-    font-family: 'Jacquard';
+    font-family: 'Minecraft';
     z-index: 2;
 }
 
@@ -333,7 +333,6 @@ h1{
     height: 5vw;
     max-width: 388px;
     max-height: 50px;
-    top: 4%;
     left: 0%;
 }
 
@@ -347,7 +346,7 @@ h1{
     border: none;
     background-color: transparent;
     text-align: center;
-    font-family: 'Jacquard';
+    font-family: 'Minecraft';
     outline: none;
     font-size: clamp(20px, 3.5vw, 54px);
     width: 20vw;
@@ -387,7 +386,7 @@ h1{
     max-height: 30px;
     top: 0%;
     left: -0.5%;
-    font-family: 'Jacquard';
+    font-family: 'Minecraft';
     background-color: transparent;
     border: none;
     color: #CD9903;

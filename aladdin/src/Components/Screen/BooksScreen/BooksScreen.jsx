@@ -5,7 +5,6 @@ export const BooksScreen = ({ selectedBook, selectedNumberIndex }) => {
         <>
             <h1 id="sLivro">Selecione seu livro</h1>
             <div id="numlivro">
-                <label htmlFor="livro">Número do Livro:</label>
                 <input
                     id="livro"
                     value={selectedBook}

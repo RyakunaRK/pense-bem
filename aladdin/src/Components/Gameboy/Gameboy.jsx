@@ -24,7 +24,12 @@ const Gameboy = () => {
     };
 
     const handleStart = () => {
-        setScreen('books');
+        if (!selectedBook) {
+            setScreen('books');
+            return;
+        }
+
+        setScreen('quests');
     };
 
     return (
