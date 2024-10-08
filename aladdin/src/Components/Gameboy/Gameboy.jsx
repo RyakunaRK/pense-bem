@@ -8,11 +8,20 @@ const Gameboy = () => {
     const [selectedBook, setSelectedBook] = useState('');
     const [selectedNumberIndex, setSelectedNumberIndex] = useState(0);
     const [gabarito, setGabarito] = useState([]);
-    const [audio] = useState(new Audio('/Sound/click.mp3'));
-    const [audioAButtom] = useState(new Audio('/Sound/a_button.mp3'));
-    const [audioStartReturn] = useState(new Audio('/Sound/start.mp3'));
+    const [audio] = useState(new Audio('/Sound/clickButton.mp3'));
+    const [audioAButtom] = useState(new Audio('/Sound/aButton.wav'));
+    const [audioStartReturn] = useState(new Audio('/Sound/pressFirstStart.mp3'));
+    const [audioGame] = useState(new Audio('/Sound/posSelectBook.mp3'));
+    const [audioQuests] = useState(new Audio('/Sound/questsScreen.mp3'));
+    audio.volume = 1;
+    audioAButtom.volume = 0.1;
     const [results, setResults] = useState([]);
     const [currentQuestion, setCurrentQuestion] = useState(0);
+
+    audioQuests.addEventListener('ended', () => {
+        audioQuests.currentTime = 0;
+        audioQuests.play();
+    })
 
     const playSound = () =>{
         audio.currentTime = 0;
@@ -27,6 +36,15 @@ const Gameboy = () => {
     const playSound3 = () =>{
         audioStartReturn.currentTime = 0;
         audioStartReturn.play();
+    }
+
+    const playSound4 = () =>{
+        audioGame.currentTime = 0;
+        audioGame.play();
+        setTimeout( () => {
+            audioQuests.currentTime = 0;
+            audioQuests.play();
+        }, 2000);
     }
 
     useEffect(() => {
@@ -50,24 +68,23 @@ const Gameboy = () => {
     };
 
     const handleLeft = () => {
-        setSelectedNumberIndex(prev => (prev - 1 + 10) % 10); 
         playSound();
+        setSelectedNumberIndex(prev => (prev - 1 + 10) % 10); 
     };
 
     const handleRight = () => {
-        setSelectedNumberIndex(prev => (prev + 1) % 10);
         playSound();
+        setSelectedNumberIndex(prev => (prev + 1) % 10);
     };
 
     const handleSelectNumber = () => {
         if (screen === 'quests') {
-            handleAnswerSelection(selectedNumberIndex);
             playSound2();
+            handleAnswerSelection(selectedNumberIndex);
             return;
         }
-
-        setSelectedBook(prev => prev + selectedNumberIndex);
         playSound2();
+        setSelectedBook(prev => prev + selectedNumberIndex);
     };
 
     const handleReturn = () => {
@@ -78,12 +95,10 @@ const Gameboy = () => {
             setScreen('books');
             setResults([])
             setCurrentQuestion(0)
-            playSound3();
             return;
         }
 
         setSelectedBook(prev => prev.slice(0, -1));
-        playSound3();
     };
 
     const handleStart = () => {
@@ -94,7 +109,7 @@ const Gameboy = () => {
         }
 
         setScreen('quests');
-        playSound3();
+        playSound4();
     };
 
     return (
