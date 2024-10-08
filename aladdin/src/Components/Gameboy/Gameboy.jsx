@@ -172,6 +172,7 @@ const Gameboy = () => {
                     scorePerQuestion={scorePerQuestion}
                     totalScore={totalScore}
                     firstTryCorrect={firstTryCorrect}
+                    currentAttempt={currentAttempt}
                 />
             </div>
         </div>

@@ -1,25 +1,43 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 export const QuestsScreen = ({
     selectedNumberIndex,
     setSelectedNumberIndex,
     results,
     currentQuestion,
-    scorePerQuestion,
     totalScore,
-    firstTryCorrect
+    currentAttempt
 }) => {
     const options = ['vm', 'am', 'az', 'vd'];
+    const containerRef = useRef(null); // Ref para o container do scroll
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (selectedNumberIndex < 0 || selectedNumberIndex >= options.length) {
             setSelectedNumberIndex(0);
         }
     }, [selectedNumberIndex, setSelectedNumberIndex, options.length]);
 
+    // Efeito para rolar automaticamente para a direita quando resultados mudam
+    useEffect(() => {
+        if (containerRef.current) {
+            containerRef.current.scrollLeft = containerRef.current.scrollWidth;
+        }
+    }, [results]);
+
     return (
         <>
-            <div style={{ display: 'flex', gap: '3px' }}>
+            <div
+                ref={containerRef} // Adicionando a referência ao container de rolagem
+                style={{
+                    display: 'flex',
+                    gap: '3px',
+                    overflowX: 'auto',
+                    paddingBottom: '10px',
+                    scrollbarWidth: 'none', // Oculta a barra de rolagem no Firefox
+                    msOverflowStyle: 'none' // Oculta a barra de rolagem no IE e Edge
+                }}
+                className="custom-scroll"
+            >
                 {results.map((result, index) => (
                     <span
                         key={index}
@@ -32,20 +50,21 @@ export const QuestsScreen = ({
                             fontFamily: 'Minecraft'
                         }}
                     >
-                        {index + 1}
+                        {index < 9 ? `0${index + 1}` : index + 1}
                     </span>
                 ))}
             </div>
             {currentQuestion < 30 ? (
                 <>
-                    <h1>Pergunta {currentQuestion + 1}</h1>
+                    <p id="tentativa">Tentativa: {currentAttempt}</p>
+                    <h1 id='perguntaQ'>Pergunta {currentQuestion + 1}</h1>
                     <div className="opcoes">
                         {options.map((option, index) => (
                             <button
-                            key={option}
-                            className={`resposta ${selectedNumberIndex === index ? 'selected' : ''}`}
-                            id={option}
-                            onClick={() => setSelectedNumberIndex(index)}
+                                key={option}
+                                className={`resposta ${selectedNumberIndex === index ? 'selected' : ''}`}
+                                id={option}
+                                onClick={() => setSelectedNumberIndex(index)}
                             >
                                 {option}
                             </button>

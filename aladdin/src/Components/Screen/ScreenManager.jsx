@@ -13,6 +13,7 @@ export const ScreenManager = ({
     scorePerQuestion,
     totalScore,
     firstTryCorrect,
+    currentAttempt
 }) => {
     let nodeToUse = <StartScreen />;
 
@@ -26,6 +27,7 @@ export const ScreenManager = ({
                     currentQuestion={currentQuestion}
                     scorePerQuestion={scorePerQuestion}
                     totalScore={totalScore}
+                    currentAttempt={currentAttempt}
                     firstTryCorrect={firstTryCorrect}
                 />
             );
