@@ -78,10 +78,10 @@ body {
 
 
 .round-button {
-    width: 10vw;
-    height: 10vw;
+    width: 9.65vw;
+    height: 9.5vw;
     max-width: 120px;
-    max-height: 110px;
+    max-height: 118px;
     background-color: transparent;
     border: none;
     border-radius: 50%;
@@ -366,6 +366,7 @@ h1{
     font-size: clamp(15px, 2vw, 40px);
     width: 30vw;
     height: 5vw;
+    color: #ffff;
     max-width: 384px;
     max-height: 50px;
     top: 38%;
