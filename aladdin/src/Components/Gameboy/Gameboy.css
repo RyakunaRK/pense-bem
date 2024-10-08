@@ -343,18 +343,18 @@ h1{
 
 #livro{
     position: absolute;
-    border: none;
+    border: solid 1px #ff0101;
     background-color: transparent;
     text-align: center;
     font-family: 'Minecraft';
     outline: none;
     font-size: clamp(20px, 3.5vw, 54px);
-    width: 20vw;
+    width: 30vw;
     height: 2.5vw;
-    max-width: 255px;
+    max-width: 384px;
     max-height: 50px;
     top: 38%;
-    left: 15%;
+    left: 0%;
     transition: color 0.3s all;
 }
 

@@ -6,13 +6,20 @@ const Gameboy = () => {
     const [screen, setScreen] = useState('');
     const [selectedBook, setSelectedBook] = useState('');
     const [selectedNumberIndex, setSelectedNumberIndex] = useState(0);
+    const [audio] = useState(new Audio('/Sound/click.mp3'));
+    const playSound = () =>{
+        audio.currentTime = 0;
+        audio.play();
+    }
 
     const handleLeft = () => {
         setSelectedNumberIndex(prev => (prev - 1 + 10) % 10); 
+        playSound();
     };
 
     const handleRight = () => {
         setSelectedNumberIndex(prev => (prev + 1) % 10);
+        playSound();
     };
 
     const handleSelectNumber = () => {
