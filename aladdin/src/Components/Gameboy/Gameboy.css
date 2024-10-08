@@ -229,7 +229,7 @@ body {
 }
 
 #vm:hover{
-    box-shadow: 0 0 15px 10px rgba(184, 62, 62, 0.7);
+    box-shadow: 0 0 15px 2px rgba(184, 62, 62, 0.7);
 }
 
 #am{
@@ -240,7 +240,7 @@ body {
 }
 
 #am:hover{
-    box-shadow: 0 0 15px 10px rgba(182, 184, 62, 0.7);
+    box-shadow: 0 0 15px 2px rgba(182, 184, 62, 0.7);
 }
 
 #az{
@@ -251,7 +251,7 @@ body {
 }
 
 #az:hover{
-    box-shadow: 0 0 15px 10px rgba(62, 70, 184, 0.7);
+    box-shadow: 0 0 15px 2px rgba(62, 70, 184, 0.7);
 }
 
 #vd{
@@ -262,14 +262,14 @@ body {
 }
 
 #vd:hover{
-    box-shadow: 0 0 15px 10px rgba(76, 184, 62, 0.7);
+    box-shadow: 0 0 15px 2px rgba(76, 184, 62, 0.7);
 }
 
 .resposta:hover {
-    width: 8vw;
-    height: 8vw;
-    max-width: 90px;
-    max-height: 90px;
+    width: 10vw;
+    height: 10vw;
+    max-width: 82px;
+    max-height: 82px;
 }
 
 #numPergunta{
@@ -328,12 +328,16 @@ h1{
 }
 
 #sLivro{
-    font-size: clamp(20px, 3.5vw, 54px);
+    font-size: clamp(10px, 2vw, 32px);
+    border: solid 1px #ff0101;
+    color:#6d6868;
+    text-align: center;
     width: 31vw;
-    height: 5vw;
+    height: 2.5vw;
     max-width: 388px;
-    max-height: 50px;
+    max-height: 55px;
     left: 0%;
+    top: 8%;
 }
 
 #numLivro{
@@ -348,9 +352,9 @@ h1{
     text-align: center;
     font-family: 'Minecraft';
     outline: none;
-    font-size: clamp(20px, 3.5vw, 54px);
+    font-size: clamp(15px, 2vw, 40px);
     width: 30vw;
-    height: 2.5vw;
+    height: 5vw;
     max-width: 384px;
     max-height: 50px;
     top: 38%;
@@ -370,11 +374,11 @@ h1{
 }
 
 .digiNum:not(.selected) {
-    font-size: 2.4rem;
+    font-size: clamp(1px, 3vw, 30px);
 }
 
 .digiNum.selected {
-    font-size: 4rem;
+    font-size: clamp(1px, 4.5vw, 40px);
 }
 
 .digiNum{
@@ -383,14 +387,14 @@ h1{
     height: 5vw;
     padding: auto;
     max-width: 38px;
-    max-height: 30px;
+    max-height: 27px;
     top: 0%;
-    left: -0.5%;
+    left: 0%;
     font-family: 'Minecraft';
     background-color: transparent;
     border: none;
     color: #CD9903;
-    font-size: clamp(20px, 4.7vw, 54px);
+    font-size: clamp(1px, 1vw, 30px);
     justify-items: center;
     transition: all 0.3s ease-in-out;
 }
