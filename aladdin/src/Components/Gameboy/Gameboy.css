@@ -78,10 +78,10 @@ body {
 
 
 .round-button {
-    width: 9.4vw;
+    width: 9vw;
     height: 10vw;
     max-width: 120px;
-    max-height: 120px;
+    max-height: 119px;
     background-color: transparent;
     border: none;
     border-radius: 50%;
@@ -91,7 +91,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     transition: background-color 0.3s;
     transition: 0.1s ease-in-out;
 }
@@ -99,7 +98,7 @@ body {
 
 .round-button:hover {
     transition: 0.1s ease-in-out;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 1);
+    box-shadow: 0 0 50px 2px rgba(182, 184, 62, 0.7);
 }
 
 .tbuttom-div{
@@ -172,6 +171,7 @@ body {
     height: 2vw;
     max-width: 110px;
     max-height: 25px;
+    border-radius: 12px;
     display: flex;
     cursor: pointer;
     justify-content: center;
@@ -180,18 +180,20 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.retangle:hover {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-}
 
 #return{
     position: absolute;
 
 }
 
+.retangle:hover {
+    transition: 0.1s ease-in-out;
+    box-shadow: 0 0 50px 2px rgba(182, 184, 62, 0.7);
+}
+
 #start{
     position: absolute;
-    left: 51.5%;
+    left: 52%;
 
 }
 
@@ -236,7 +238,7 @@ body {
     transition: box-shadow 0.3s ease-in-out;
 }
 
-#vm:hover{
+#vm.selected{
     box-shadow: 0 0 15px 2px rgba(184, 62, 62, 0.7);
 }
 
@@ -247,7 +249,7 @@ body {
     transition: box-shadow 0.3s ease-in-out;
 }
 
-#am:hover{
+#am.selected{
     box-shadow: 0 0 15px 2px rgba(182, 184, 62, 0.7);
 }
 
@@ -258,7 +260,7 @@ body {
     transition: box-shadow 0.3s ease-in-out;
 }
 
-#az:hover{
+#az.selected{
     box-shadow: 0 0 15px 2px rgba(62, 70, 184, 0.7);
 }
 
@@ -269,7 +271,7 @@ body {
     transition: box-shadow 0.3s ease-in-out;
 }
 
-#vd:hover{
+#vd.selected{
     box-shadow: 0 0 15px 2px rgba(76, 184, 62, 0.7);
 }
 
@@ -342,20 +344,21 @@ h1{
     text-align: center;
     width: 31vw;
     height: 2.5vw;
-    max-width: 388px;
+    max-width: 384px;
     max-height: 55px;
-    left: 0%;
+    left: 1%;
     top: 8%;
 }
 
 #numLivro{
     position: absolute;
-    /*border: solid 1px #ff0101;*/
+    border: none;
+    outline: none;
 }
 
 #livro{
     position: absolute;
-    /*border: solid 1px #ff0101;*/
+    border: none;
     background-color: transparent;
     text-align: center;
     font-family: 'Minecraft';
