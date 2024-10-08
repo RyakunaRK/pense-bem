@@ -43,6 +43,8 @@ export const QuestsScreen = ({
                                 width: '10px',
                                 height: '10px',
                                 backgroundColor: result ? '#4cb83e' : '#b83e3e',
+                                maxHeight: '10px',
+                                maxWidth: '10px',
                                 fontSize: '8px',
                                 textAlign: 'center',
                                 fontFamily: 'Minecraft'

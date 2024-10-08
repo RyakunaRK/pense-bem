@@ -9,12 +9,24 @@ const Gameboy = () => {
     const [selectedNumberIndex, setSelectedNumberIndex] = useState(0);
     const [gabarito, setGabarito] = useState([]);
     const [audio] = useState(new Audio('/Sound/click.mp3'));
+    const [audioAButtom] = useState(new Audio('/Sound/a_button.mp3'));
+    const [audioStartReturn] = useState(new Audio('/Sound/start.mp3'));
     const [results, setResults] = useState([]);
     const [currentQuestion, setCurrentQuestion] = useState(0);
 
     const playSound = () =>{
         audio.currentTime = 0;
         audio.play();
+    }
+
+    const playSound2 = () =>{
+        audioAButtom.currentTime = 0;
+        audioAButtom.play();
+    }
+
+    const playSound3 = () =>{
+        audioStartReturn.currentTime = 0;
+        audioStartReturn.play();
     }
 
     useEffect(() => {
@@ -50,10 +62,12 @@ const Gameboy = () => {
     const handleSelectNumber = () => {
         if (screen === 'quests') {
             handleAnswerSelection(selectedNumberIndex);
+            playSound2();
             return;
         }
 
         setSelectedBook(prev => prev + selectedNumberIndex);
+        playSound2();
     };
 
     const handleReturn = () => {
@@ -64,19 +78,23 @@ const Gameboy = () => {
             setScreen('books');
             setResults([])
             setCurrentQuestion(0)
+            playSound3();
             return;
         }
 
         setSelectedBook(prev => prev.slice(0, -1));
+        playSound3();
     };
 
     const handleStart = () => {
         if (!selectedBook) {
             setScreen('books');
+            playSound3();
             return;
         }
 
         setScreen('quests');
+        playSound3();
     };
 
     return (
