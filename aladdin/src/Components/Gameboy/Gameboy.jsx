@@ -83,17 +83,17 @@ const Gameboy = () => {
         <div className="div">
             <div className='gameboy-div'>
                 <div className="abuttom-div">
-                    <button className="round-button" onClick={handleSelectNumber}>A</button>
+                    <button className="round-button" onClick={handleSelectNumber}></button>
                 </div>
                 <div className="tbuttom-div">
-                <button className="triangle-button" onClick={handleLeft} id="t1">1</button>
-                    <button className="triangle-button" onClick={handleLeft} id="t2">2</button>
-                    <button className="triangle-button" onClick={handleLeft} id="t3">3</button>
-                    <button className="triangle-button" onClick={handleRight} id="t4">4</button>
+                <button className="triangle-button" onClick={handleLeft} id="t1"></button>
+                    <button className="triangle-button" onClick={handleLeft} id="t2"></button>
+                    <button className="triangle-button" onClick={handleLeft} id="t3"></button>
+                    <button className="triangle-button" onClick={handleRight} id="t4"></button>
                 </div>
                 <div className="rbuttom-div">
-                    <button className="retangle" id="return" onClick={handleReturn}>return</button>
-                    <button className="retangle" id="start" onClick={handleStart}>start</button>
+                    <button className="retangle" id="return" onClick={handleReturn}></button>
+                    <button className="retangle" id="start" onClick={handleStart}></button>
                 </div>
 
                 <ScreenManager

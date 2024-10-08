@@ -55,7 +55,7 @@ body {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    border: solid 1px #ff0101
+    /*border: solid 1px #ff0101*/
 }
 
 .abuttom-div {
@@ -68,7 +68,7 @@ body {
     max-width: 120px;
     max-height: 120px;
     background-color: rgba(255, 255, 255, 0);
-    border: solid 1px #ff0101;
+    /*border: solid 1px #ff0101;*/
     display: flex;
     align-items: center;
     justify-content: center;
@@ -82,7 +82,7 @@ body {
     height: 10vw;
     max-width: 120px;
     max-height: 120px;
-    background-color: #ff0101;
+    background-color: transparent;
     border: none;
     border-radius: 50%;
     color: white;
@@ -91,12 +91,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     transition: background-color 0.3s;
+    transition: 0.1s ease-in-out;
 }
 
+
 .round-button:hover {
-    background-color: #00000000;
+    transition: 0.1s ease-in-out;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 1);
 }
 
 .tbuttom-div{
@@ -107,7 +110,7 @@ body {
     max-height: 190px;
     top: 61%; /* Alinha ao topo */
     left: 12%; /* Alinha à esquerda */
-    border: solid 1px #ff0101;
+    /*border: solid 1px #ff0101;*/
 }
 
 .triangle-button {
@@ -117,15 +120,15 @@ body {
     height: 4vw; /* Tamanho fixo para os botões */
     max-width: 40px;
     max-height: 40px;
-    background-color: #ff0101; /* Cor de fundo do triângulo */
+    background-color: transparent; /* Cor de fundo do triângulo */
     border: none; /* Remove bordas */
-    border-radius: 50%; /* Faz os botões serem circulares */
-    color: white; /* Cor do texto */
+    /*border-radius: 50%; /* Faz os botões serem circulares */
+    /*color: white; /* Cor do texto */
     font-size: 2vw; /* Tamanho da fonte relativo */
     display: flex; /* Permite centralizar conteúdo */
     align-items: center; /* Centraliza verticalmente */
     justify-content: center; /* Centraliza horizontalmente */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra do botão */
+    /*box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra do botão */
     transition: background-color 0.3s; /* Transição suave de cor de fundo */
 }
 
@@ -155,7 +158,7 @@ body {
 
 .rbuttom-div{
     position: absolute;
-    border: solid 1px #ff0101;
+    /*border: solid 1px #ff0101;*/
     width: 18vw;
     height: 2vw;
     max-width: 227px;
@@ -172,8 +175,13 @@ body {
     display: flex;
     cursor: pointer;
     justify-content: center;
-    background-color: #ff0101;
+    background-color: transparent;
     border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.retangle:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 #return{
@@ -188,7 +196,7 @@ body {
 }
 
 .tela{
-    border: solid 1px #ff0101;
+    /*border: solid 1px #ff0101;*/
     width: 31vw;
     height: 24.4vw;
     max-width: 389px;
@@ -213,7 +221,7 @@ body {
 
 .opcoes{
     position: absolute;
-    border: solid 1px #ff0101;
+    /*border: solid 1px #ff0101;*/
     width: 30.7vw;
     height: 6vw;
     max-width: 389px;
@@ -280,7 +288,7 @@ body {
     max-height: 50px;
     top: 20%;
     left: 10.6%;
-    border: solid 1px #ff0101;
+    /*border: solid 1px #ff0101;*/
     background-color: #2D2A2A;
     justify-content: center;
     align-items: center;
@@ -329,7 +337,7 @@ h1{
 
 #sLivro{
     font-size: clamp(10px, 2vw, 32px);
-    border: solid 1px #ff0101;
+    /*border: solid 1px #ff0101;*/
     color:#6d6868;
     text-align: center;
     width: 31vw;
@@ -342,12 +350,12 @@ h1{
 
 #numLivro{
     position: absolute;
-    border: solid 1px #ff0101;
+    /*border: solid 1px #ff0101;*/
 }
 
 #livro{
     position: absolute;
-    border: solid 1px #ff0101;
+    /*border: solid 1px #ff0101;*/
     background-color: transparent;
     text-align: center;
     font-family: 'Minecraft';
@@ -364,7 +372,7 @@ h1{
 
 #tecladoNum{
     position: absolute;
-    border: solid 1px #ff0101;
+    /*border: solid 1px #ff0101;*/
     width: 30.86vw;
     height: 5vw;
     max-width: 389px;
